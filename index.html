@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Updates & Newsroom | Stay Connected</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-blue-900 to-indigo-800 text-white py-12 px-4 shadow-xl">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 animate__animated animate__fadeIn">Alumni Updates Hub</h1>
+            <p class="text-xl text-blue-200">Share achievements, opportunities and connect with classmates</p>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class="container mx-auto py-12 px-4">
+        <!-- Update Posting Section -->
+        <div class="max-w-3xl mx-auto bg-purple-50 p-6 rounded-lg border border-purple-200 mb-8 animate__animated animate__fadeIn">
+            <h2 class="text-xl font-bold text-purple-800 mb-4 text-center">Share Your Update</h2>
+            <div class="tabs flex space-x-2 mb-4">
+                <button class="tab-btn active px-4 py-2 rounded-full bg-indigo-600 text-white" data-tab="all">All Updates</button>
+                <button class="tab-btn px-4 py-2 rounded-full bg-indigo-100 text-indigo-800 hover:bg-indigo-200" data-tab="career">Career News</button>
+                <button class="tab-btn px-4 py-2 rounded-full bg-indigo-100 text-indigo-800 hover:bg-indigo-200" data-tab="startups">Startups</button>
+                <button class="tab-btn px-4 py-2 rounded-full bg-indigo-100 text-indigo-800 hover:bg-indigo-200" data-tab="help">Help Requests</button>
+                <button class="tab-btn px-4 py-2 rounded-full bg-purple-100 text-purple-800 hover:bg-purple-200" data-tab="announcements">Announcements</button>
+            </div>
+            <textarea placeholder="Share your latest achievement, opportunity, or request..." class="w-full mb-4 p-3 border rounded-lg h-32"></textarea>
+            <div class="flex justify-between">
+                <button class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-6 rounded transition duration-300">
+                    Post Update
+                </button>
+                <button class="text-purple-600 hover:text-purple-800 flex items-center">
+                    <i class="fas fa-paperclip mr-2"></i> Add Attachment
+                </button>
+            </div>
+        </div>
+        <!-- Verification status will appear here -->
+        <div id="verificationStatus" class="mb-8 hidden"></div>
+        
+        <!-- Updates Feed Section -->
+        <section class="mt-16 p-6 bg-white rounded-2xl shadow-lg animate__animated animate__fadeIn">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 md:mb-0">Community Updates</h2>
+                <div class="flex space-x-4">
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                        <i class="fas fa-search mr-2"></i>Advanced Search
+                    </button>
+                    <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition duration-300">
+                        <i class="fas fa-plus mr-2"></i>Add Profile
+                    </button>
+                </div>
+            </div>
+
+            <div class="daily-highlights mb-8 bg-gradient-to-r from-green-500 to-emerald-600 text-white p-4 rounded-xl flex items-center">
+                <div class="mr-4 text-2xl">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold">Today's Highlight</h3>
+                    <div id="daily-spotlight">
+                        Loading today's featured updates...
+                    </div>
+                </div>
+                <button id="refresh-highlight" class="ml-auto bg-white bg-opacity-20 hover:bg-opacity-30 p-2 rounded-full">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
+            </div>
+
+            <!-- Alumni Results Display -->
+            <!-- Tab Content Sections -->
+            <div class="tab-content active" id="all-tab">
+                <div class="updates-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- All updates will be populated here -->
+                </div>
+            </div>
+            
+            <div class="tab-content hidden" id="career-tab">
+                <div class="featured-card bg-blue-50 p-6 rounded-xl mb-6">
+                    <h3 class="text-xl font-bold mb-2">Featured Career Opportunity</h3>
+                    <div id="daily-career-spotlight"></div>
+                </div>
+                <div class="updates-grid grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Career updates will be populated here -->
+                </div>
+            </div>
+
+            <!-- Other tab content sections similarly structured -->
+        </section>
+
+        <!-- AI Powered Alumni Matching -->
+        <div class="mt-12 bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6 rounded-2xl shadow-lg animate__animated animate__fadeIn">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-4">AI-Powered Matching</h3>
+                    <p>Our smart system analyzes your profile to connect you with the most relevant alumni based on your:</p>
+                    <ul class="list-disc pl-5 mt-2 space-y-2">
+                        <li>Career interests</li>
+                        <li>Skills and expertise</li>
+                        <li>Academic background</li>
+                        <li>Industry preferences</li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <button class="bg-white text-purple-600 hover:bg-gray-100 font-bold py-3 px-6 rounded-full text-lg shadow-md transform hover:scale-105 transition-all">
+                        Find Your Best Matches
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto text-center">
+            <p class="text-blue-300">© 2025 AlmaConnect | Alumni Networking Platform</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
