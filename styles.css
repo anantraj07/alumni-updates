@@ -1,0 +1,20 @@
+.tab-content {
+    transition: opacity 0.3s ease;
+}
+
+.update-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.update-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.featured-card {
+    box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2);
+}
+
+.daily-highlights {
+    box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2);
+}
